@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-server.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-service1.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-service1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-service2.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-service2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/poc.iml" filepath="$PROJECT_DIR$/.idea/modules/poc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-boot-admin.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-boot-admin.iml" />
+    </modules>
+  </component>
+</project>
