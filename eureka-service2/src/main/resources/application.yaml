@@ -1,7 +1,5 @@
 server:
   port: 8763
-eureka:
-  name: 'Service2'
 spring:
   application:
     name: 'ServiceSpring2'

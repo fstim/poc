@@ -1,9 +1,11 @@
 server:
   port: 8080
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-  client:
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: 'http://localhost:8761/eureka/'
+
+spring:
+  application:
+    name: 'Eureka Cloud Administration'
+  boot:
+    admin:
+      context-path: '/admin'
+      routes:
+        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,hystrix.stream

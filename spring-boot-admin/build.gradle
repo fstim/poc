@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.1.RELEASE'
+		springBootVersion = '1.4.3.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -30,14 +30,14 @@ repositories {
 dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-eureka')
     compile('org.springframework.boot:spring-boot-starter-actuator')
-    compile('de.codecentric:spring-boot-admin-server:1.4.5')
-    compile('de.codecentric:spring-boot-admin-server-ui:1.4.5')
-    compile('org.springframework.hateoas:spring-hateoas')
+    compile('de.codecentric:spring-boot-admin-server')
+    compile('de.codecentric:spring-boot-admin-server-ui')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.M1"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.RELEASE"
+        mavenBom "de.codecentric:spring-boot-admin-server:1.4.5"
     }
 }
