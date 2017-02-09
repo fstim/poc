@@ -19,7 +19,8 @@ jar {
 	version = '0.0.1-SNAPSHOT'
 }
 
-sourceCompatibility = 1.8
+group='com.rian'
+version='1.0'
 
 repositories {
 	mavenCentral()
@@ -32,6 +33,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('de.codecentric:spring-boot-admin-server')
     compile('de.codecentric:spring-boot-admin-server-ui')
+    compile('org.jolokia:jolokia-core')
+    compile('org.springframework.boot:spring-boot-devtools')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
@@ -40,4 +43,8 @@ dependencyManagement {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.RELEASE"
         mavenBom "de.codecentric:spring-boot-admin-server:1.4.5"
     }
+}
+
+springBoot {
+    buildInfo()
 }
