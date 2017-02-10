@@ -20,14 +20,8 @@ public class EurekaService1Application {
 	}
 
 	@Bean
-	CommandLineRunner init(DiscoveryClient discoveryClient) {
-		return args -> {
-			System.out.println("Démarrage de l'application TOTO");
-			List<ServiceInstance> services = discoveryClient.getInstances("ServiceSpring2");
-			for (ServiceInstance service : services) {
-				System.out.println(service.getUri());
-			}
-		};
+	CommandLineRunner init() {
+		return args -> System.out.println("Démarrage de l'application ServiceSpring1");
 	}
 
 }
