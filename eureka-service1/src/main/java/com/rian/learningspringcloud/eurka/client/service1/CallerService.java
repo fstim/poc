@@ -21,24 +21,22 @@ public class CallerService {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     @RequestMapping("/call")
-    public ComparaisonReturn call(@RequestParam(value = "numberToTest") Integer numberToTest) {
-        logger.info("Appel de la méthode call du service spring 1!");
+    public ComparaisonReturn call(Integer numberToTest) {
         ComparaisonReturn result = new ComparaisonReturn();
         result.setInitialValue(numberToTest);
         List<ServiceInstance> springService2Instances = discoveryClient.getInstances("ServiceSpring2");
         if (springService2Instances.isEmpty()) {
             throw new RuntimeException("Pas d'instance de ServiceSpring2 disponible !!!");
         }
-        springService2Instances.forEach(springService2Instance -> logger.debug(springService2Instance.getUri().toString()));
-        ResponseEntity<Integer> responseEntity = new RestTemplate().getForEntity(springService2Instances.get(0).getUri()
+        ResponseEntity<Integer> responseEntity = restTemplate.getForEntity(springService2Instances.get(0).getUri()
                         + "/quelqueChose", Integer.class);
         Integer strangeValue = responseEntity.getBody();
-        logger.debug("Valeur récupérée : " + strangeValue);
         result.setStrangeValue(strangeValue);
         result.setComparaisonResult(numberToTest == strangeValue);
-        logger.debug("Le résultat de l'appel est : " + result.getComparaisonResult() + " pour la valeur initiale : "
-                + result.getInitialValue() + " et la valeur étrange : " + result.getStrangeValue());
         return result;
     }
 

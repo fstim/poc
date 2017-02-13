@@ -6,28 +6,27 @@ class ComparaisonReturn {
     private Integer strangeValue;
     private Boolean comparaisonResult;
 
-
-    Boolean getComparaisonResult() {
-        return comparaisonResult;
-    }
-
-    void setComparaisonResult(Boolean comparaisonResult) {
-        this.comparaisonResult = comparaisonResult;
-    }
-
-    Integer getStrangeValue() {
-        return strangeValue;
-    }
-
-    Integer getInitialValue() {
+    public Integer getInitialValue() {
         return initialValue;
     }
 
-    void setInitialValue(Integer initialValue) {
+    public void setInitialValue(Integer initialValue) {
         this.initialValue = initialValue;
     }
 
-    void setStrangeValue(Integer strangeValue) {
+    public Integer getStrangeValue() {
+        return strangeValue;
+    }
+
+    public void setStrangeValue(Integer strangeValue) {
         this.strangeValue = strangeValue;
+    }
+
+    public Boolean getComparaisonResult() {
+        return comparaisonResult;
+    }
+
+    public void setComparaisonResult(Boolean comparaisonResult) {
+        this.comparaisonResult = comparaisonResult;
     }
 }

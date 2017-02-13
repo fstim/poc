@@ -8,6 +8,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -23,5 +24,10 @@ public class EurekaService1Application {
 	CommandLineRunner init() {
 		return args -> System.out.println("Démarrage de l'application ServiceSpring1");
 	}
+
+	@Bean
+    RestTemplate getRestTemplate() {
+	    return  new RestTemplate();
+    }
 
 }
