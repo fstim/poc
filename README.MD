@@ -127,5 +127,9 @@ Pour ce faire, il faut externaliser l'appel du service dans une classe annotée 
 
 Cette annotation doit référencer une méthode de failover qui a la même signature que la méthode appelée. C'est cette méthode qui sera appelée tant que le circuit entre le client et le service est coupé sans avoir à refaire un appel à la ressource down. Le passage par la méthode de failover est transparent et aucune action n'est nécessaire lorsque la ressource est de nouveau disponible.
 
+Config Server
+=============
+
+
 Questions pour Régis
 ====================

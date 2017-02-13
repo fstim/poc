@@ -3,3 +3,6 @@ server:
 spring:
   application:
     name: 'ServiceSpring1'
+  platform:
+    config:
+      uri: http://localhost:8090/ServiceSpring1/default

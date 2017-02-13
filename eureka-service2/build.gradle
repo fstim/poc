@@ -34,6 +34,7 @@ dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 	compile('org.springframework.boot:spring-boot-starter-jersey')
 	compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.cloud:spring-cloud-starter-config')
 	compile('org.springframework.hateoas:spring-hateoas')
     compile('org.jolokia:jolokia-core')
     compile('org.springframework.boot:spring-boot-devtools')
