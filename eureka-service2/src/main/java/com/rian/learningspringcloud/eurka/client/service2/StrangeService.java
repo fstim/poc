@@ -10,6 +10,7 @@ public class StrangeService {
 
     @RequestMapping("/quelqueChose")
     public Integer getQuelqueChose() {
+        System.out.println("Le service étrange renvoie une valeur!!!");
         return new Random().nextInt(100);
     }
 

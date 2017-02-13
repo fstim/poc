@@ -3,6 +3,7 @@ package com.rian.learningspringcloud.eurka.client.service1;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -26,8 +27,8 @@ public class EurekaService1Application {
 	}
 
 	@Bean
-    RestTemplate getRestTemplate() {
-	    return  new RestTemplate();
+    RestTemplate getRestTemplate(RestTemplateBuilder builder) {
+        return builder.build();
     }
 
 }
