@@ -119,5 +119,13 @@ Pour accéder aux éléments JMX, il faut que l'application cliente tire la dép
 
 Pour accéder aux loggers, il faut utiliser logback et ajouter le jmxConfigurator dans la configuration logback. On peut ensuite modifier les niveaux des différents loggers directement depuis la console d'administration.
 
+Spring Cloud Hystrix
+====================
+Le circuit breaker proposé avec Spring Cloud permet d'éviter de continuer à faire des appels à un service lorsque l'on sait que la ressource n'est pas disponible.  
+
+Pour ce faire, il faut externaliser l'appel du service dans une classe annotée '@Service'. On annote ensuite la méthode qui va faire appel au service distant à l'aide du 'RestTemplate' à l'aide de l'annotation '@HystrixCommand'.  
+
+Cette annotation doit référencer une méthode de failover qui a la même signature que la méthode appelée. C'est cette méthode qui sera appelée tant que le circuit entre le client et le service est coupé sans avoir à refaire un appel à la ressource down. Le passage par la méthode de failover est transparent et aucune action n'est nécessaire lorsque la ressource est de nouveau disponible.
+
 Questions pour Régis
 ====================

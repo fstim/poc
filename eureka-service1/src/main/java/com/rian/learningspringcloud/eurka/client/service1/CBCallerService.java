@@ -31,6 +31,7 @@ public class CBCallerService {
     }
 
     public Integer reliable(Integer numberToTest) {
+        System.out.println("Appel de la méthode de failover");
         return numberToTest;
     }
 
